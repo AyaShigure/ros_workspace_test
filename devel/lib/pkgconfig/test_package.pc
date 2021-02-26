@@ -1,0 +1,8 @@
+prefix=/home/ubuntu/ros_workspace_test/devel
+
+Name: test_package
+Description: Description of test_package
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

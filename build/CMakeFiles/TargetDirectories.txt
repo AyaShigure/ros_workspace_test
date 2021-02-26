@@ -35,3 +35,15 @@
 /home/ubuntu/ros_workspace_test/build/gtest/googletest/CMakeFiles/test.dir
 /home/ubuntu/ros_workspace_test/build/gtest/googletest/CMakeFiles/gtest_main.dir
 /home/ubuntu/ros_workspace_test/build/gtest/googletest/CMakeFiles/gtest.dir
+/home/ubuntu/ros_workspace_test/build/test_package/CMakeFiles/install/strip.dir
+/home/ubuntu/ros_workspace_test/build/test_package/CMakeFiles/install/local.dir
+/home/ubuntu/ros_workspace_test/build/test_package/CMakeFiles/edit_cache.dir
+/home/ubuntu/ros_workspace_test/build/test_package/CMakeFiles/test.dir
+/home/ubuntu/ros_workspace_test/build/test_package/CMakeFiles/std_msgs_generate_messages_py.dir
+/home/ubuntu/ros_workspace_test/build/test_package/CMakeFiles/std_msgs_generate_messages_nodejs.dir
+/home/ubuntu/ros_workspace_test/build/test_package/CMakeFiles/std_msgs_generate_messages_lisp.dir
+/home/ubuntu/ros_workspace_test/build/test_package/CMakeFiles/std_msgs_generate_messages_eus.dir
+/home/ubuntu/ros_workspace_test/build/test_package/CMakeFiles/install.dir
+/home/ubuntu/ros_workspace_test/build/test_package/CMakeFiles/list_install_components.dir
+/home/ubuntu/ros_workspace_test/build/test_package/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/ros_workspace_test/build/test_package/CMakeFiles/std_msgs_generate_messages_cpp.dir
