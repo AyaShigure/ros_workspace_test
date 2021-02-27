@@ -30,10 +30,8 @@ def buzzing():
 
     rospy.init_node('buzzer')
     rospy.Subscriber('buzzing_hz',Hz,callback)
-
-
     
-
+    
 if __name__ == '__main__':
     buzzing()
     rospy.spin()
