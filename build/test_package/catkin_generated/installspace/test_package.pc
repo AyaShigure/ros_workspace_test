@@ -3,6 +3,6 @@ prefix=/home/ubuntu/ros_workspace_test/install
 Name: test_package
 Description: Description of test_package
 Version: 0.0.0
-Cflags: 
+Cflags: -I${prefix}/include
 Libs: -L${prefix}/lib 
-Requires: 
+Requires: rospy std_msgs message_runtime
