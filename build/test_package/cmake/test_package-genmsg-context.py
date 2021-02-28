@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/ubuntu/ros_workspace_test/src/test_package/msg/Hz.msg"
+messages_str = "/home/ubuntu/ros_workspace_test/src/test_package/msg/Hz.msg;/home/ubuntu/ros_workspace_test/src/test_package/msg/Motor_control.msg"
 services_str = ""
 pkg_name = "test_package"
 dependencies_str = "std_msgs"

@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/ubuntu/ros_workspace_test/build
 include test_package/CMakeFiles/test_package_generate_messages_cpp.dir/progress.make
 
 test_package/CMakeFiles/test_package_generate_messages_cpp: /home/ubuntu/ros_workspace_test/devel/include/test_package/Hz.h
+test_package/CMakeFiles/test_package_generate_messages_cpp: /home/ubuntu/ros_workspace_test/devel/include/test_package/Motor_control.h
 
 
 /home/ubuntu/ros_workspace_test/devel/include/test_package/Hz.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
@@ -62,8 +63,15 @@ test_package/CMakeFiles/test_package_generate_messages_cpp: /home/ubuntu/ros_wor
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/ros_workspace_test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from test_package/Hz.msg"
 	cd /home/ubuntu/ros_workspace_test/src/test_package && /home/ubuntu/ros_workspace_test/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/ubuntu/ros_workspace_test/src/test_package/msg/Hz.msg -Itest_package:/home/ubuntu/ros_workspace_test/src/test_package/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p test_package -o /home/ubuntu/ros_workspace_test/devel/include/test_package -e /opt/ros/noetic/share/gencpp/cmake/..
 
+/home/ubuntu/ros_workspace_test/devel/include/test_package/Motor_control.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
+/home/ubuntu/ros_workspace_test/devel/include/test_package/Motor_control.h: /home/ubuntu/ros_workspace_test/src/test_package/msg/Motor_control.msg
+/home/ubuntu/ros_workspace_test/devel/include/test_package/Motor_control.h: /opt/ros/noetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/ros_workspace_test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from test_package/Motor_control.msg"
+	cd /home/ubuntu/ros_workspace_test/src/test_package && /home/ubuntu/ros_workspace_test/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/ubuntu/ros_workspace_test/src/test_package/msg/Motor_control.msg -Itest_package:/home/ubuntu/ros_workspace_test/src/test_package/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p test_package -o /home/ubuntu/ros_workspace_test/devel/include/test_package -e /opt/ros/noetic/share/gencpp/cmake/..
+
 test_package_generate_messages_cpp: test_package/CMakeFiles/test_package_generate_messages_cpp
 test_package_generate_messages_cpp: /home/ubuntu/ros_workspace_test/devel/include/test_package/Hz.h
+test_package_generate_messages_cpp: /home/ubuntu/ros_workspace_test/devel/include/test_package/Motor_control.h
 test_package_generate_messages_cpp: test_package/CMakeFiles/test_package_generate_messages_cpp.dir/build.make
 
 .PHONY : test_package_generate_messages_cpp

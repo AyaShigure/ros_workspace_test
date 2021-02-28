@@ -50,6 +50,7 @@ find_package(catkin REQUIRED COMPONENTS
  add_message_files(
    FILES
    Hz.msg
+   Motor_control.msg
 #   Message1.msg
 #   Message2.msg
 )
@@ -163,6 +164,9 @@ include_directories(
 catkin_install_python(PROGRAMS 
   scripts/buzzer.py 
   scripts/buzz_control_node.py
+  scripts/keyboard_control.py
+  scripts/motor_left.py
+  scripts/motor_right.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
  )
 

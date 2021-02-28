@@ -38,7 +38,10 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/test_package/msg" TYPE FILE FILES "/home/ubuntu/ros_workspace_test/src/test_package/msg/Hz.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/test_package/msg" TYPE FILE FILES
+    "/home/ubuntu/ros_workspace_test/src/test_package/msg/Hz.msg"
+    "/home/ubuntu/ros_workspace_test/src/test_package/msg/Motor_control.msg"
+    )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -94,5 +97,17 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/test_package" TYPE PROGRAM FILES "/home/ubuntu/ros_workspace_test/build/test_package/catkin_generated/installspace/buzz_control_node.py")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/test_package" TYPE PROGRAM FILES "/home/ubuntu/ros_workspace_test/build/test_package/catkin_generated/installspace/keyboard_control.py")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/test_package" TYPE PROGRAM FILES "/home/ubuntu/ros_workspace_test/build/test_package/catkin_generated/installspace/motor_left.py")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/test_package" TYPE PROGRAM FILES "/home/ubuntu/ros_workspace_test/build/test_package/catkin_generated/installspace/motor_right.py")
 endif()
 

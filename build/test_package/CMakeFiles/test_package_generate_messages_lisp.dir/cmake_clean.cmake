@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "/home/ubuntu/ros_workspace_test/devel/share/common-lisp/ros/test_package/msg/Hz.lisp"
+  "/home/ubuntu/ros_workspace_test/devel/share/common-lisp/ros/test_package/msg/Motor_control.lisp"
   "CMakeFiles/test_package_generate_messages_lisp"
 )
 

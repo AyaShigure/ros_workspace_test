@@ -3,5 +3,7 @@
   (:export
    "<HZ>"
    "HZ"
+   "<MOTOR_CONTROL>"
+   "MOTOR_CONTROL"
   ))
 

@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/ubuntu/ros_workspace_test/build
 include test_package/CMakeFiles/test_package_generate_messages_lisp.dir/progress.make
 
 test_package/CMakeFiles/test_package_generate_messages_lisp: /home/ubuntu/ros_workspace_test/devel/share/common-lisp/ros/test_package/msg/Hz.lisp
+test_package/CMakeFiles/test_package_generate_messages_lisp: /home/ubuntu/ros_workspace_test/devel/share/common-lisp/ros/test_package/msg/Motor_control.lisp
 
 
 /home/ubuntu/ros_workspace_test/devel/share/common-lisp/ros/test_package/msg/Hz.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
@@ -61,8 +62,14 @@ test_package/CMakeFiles/test_package_generate_messages_lisp: /home/ubuntu/ros_wo
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/ros_workspace_test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from test_package/Hz.msg"
 	cd /home/ubuntu/ros_workspace_test/build/test_package && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/ubuntu/ros_workspace_test/src/test_package/msg/Hz.msg -Itest_package:/home/ubuntu/ros_workspace_test/src/test_package/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p test_package -o /home/ubuntu/ros_workspace_test/devel/share/common-lisp/ros/test_package/msg
 
+/home/ubuntu/ros_workspace_test/devel/share/common-lisp/ros/test_package/msg/Motor_control.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
+/home/ubuntu/ros_workspace_test/devel/share/common-lisp/ros/test_package/msg/Motor_control.lisp: /home/ubuntu/ros_workspace_test/src/test_package/msg/Motor_control.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/ros_workspace_test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Lisp code from test_package/Motor_control.msg"
+	cd /home/ubuntu/ros_workspace_test/build/test_package && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/ubuntu/ros_workspace_test/src/test_package/msg/Motor_control.msg -Itest_package:/home/ubuntu/ros_workspace_test/src/test_package/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p test_package -o /home/ubuntu/ros_workspace_test/devel/share/common-lisp/ros/test_package/msg
+
 test_package_generate_messages_lisp: test_package/CMakeFiles/test_package_generate_messages_lisp
 test_package_generate_messages_lisp: /home/ubuntu/ros_workspace_test/devel/share/common-lisp/ros/test_package/msg/Hz.lisp
+test_package_generate_messages_lisp: /home/ubuntu/ros_workspace_test/devel/share/common-lisp/ros/test_package/msg/Motor_control.lisp
 test_package_generate_messages_lisp: test_package/CMakeFiles/test_package_generate_messages_lisp.dir/build.make
 
 .PHONY : test_package_generate_messages_lisp

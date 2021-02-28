@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/ubuntu/ros_workspace_test/build
 include test_package/CMakeFiles/test_package_generate_messages_py.dir/progress.make
 
 test_package/CMakeFiles/test_package_generate_messages_py: /home/ubuntu/ros_workspace_test/devel/lib/python3/dist-packages/test_package/msg/_Hz.py
+test_package/CMakeFiles/test_package_generate_messages_py: /home/ubuntu/ros_workspace_test/devel/lib/python3/dist-packages/test_package/msg/_Motor_control.py
 test_package/CMakeFiles/test_package_generate_messages_py: /home/ubuntu/ros_workspace_test/devel/lib/python3/dist-packages/test_package/msg/__init__.py
 
 
@@ -62,13 +63,20 @@ test_package/CMakeFiles/test_package_generate_messages_py: /home/ubuntu/ros_work
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/ros_workspace_test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG test_package/Hz"
 	cd /home/ubuntu/ros_workspace_test/build/test_package && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/ubuntu/ros_workspace_test/src/test_package/msg/Hz.msg -Itest_package:/home/ubuntu/ros_workspace_test/src/test_package/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p test_package -o /home/ubuntu/ros_workspace_test/devel/lib/python3/dist-packages/test_package/msg
 
+/home/ubuntu/ros_workspace_test/devel/lib/python3/dist-packages/test_package/msg/_Motor_control.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/ubuntu/ros_workspace_test/devel/lib/python3/dist-packages/test_package/msg/_Motor_control.py: /home/ubuntu/ros_workspace_test/src/test_package/msg/Motor_control.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/ros_workspace_test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG test_package/Motor_control"
+	cd /home/ubuntu/ros_workspace_test/build/test_package && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/ubuntu/ros_workspace_test/src/test_package/msg/Motor_control.msg -Itest_package:/home/ubuntu/ros_workspace_test/src/test_package/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p test_package -o /home/ubuntu/ros_workspace_test/devel/lib/python3/dist-packages/test_package/msg
+
 /home/ubuntu/ros_workspace_test/devel/lib/python3/dist-packages/test_package/msg/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 /home/ubuntu/ros_workspace_test/devel/lib/python3/dist-packages/test_package/msg/__init__.py: /home/ubuntu/ros_workspace_test/devel/lib/python3/dist-packages/test_package/msg/_Hz.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/ros_workspace_test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python msg __init__.py for test_package"
+/home/ubuntu/ros_workspace_test/devel/lib/python3/dist-packages/test_package/msg/__init__.py: /home/ubuntu/ros_workspace_test/devel/lib/python3/dist-packages/test_package/msg/_Motor_control.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/ros_workspace_test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python msg __init__.py for test_package"
 	cd /home/ubuntu/ros_workspace_test/build/test_package && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/ubuntu/ros_workspace_test/devel/lib/python3/dist-packages/test_package/msg --initpy
 
 test_package_generate_messages_py: test_package/CMakeFiles/test_package_generate_messages_py
 test_package_generate_messages_py: /home/ubuntu/ros_workspace_test/devel/lib/python3/dist-packages/test_package/msg/_Hz.py
+test_package_generate_messages_py: /home/ubuntu/ros_workspace_test/devel/lib/python3/dist-packages/test_package/msg/_Motor_control.py
 test_package_generate_messages_py: /home/ubuntu/ros_workspace_test/devel/lib/python3/dist-packages/test_package/msg/__init__.py
 test_package_generate_messages_py: test_package/CMakeFiles/test_package_generate_messages_py.dir/build.make
 

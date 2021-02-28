@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/ubuntu/ros_workspace_test/build
 include test_package/CMakeFiles/test_package_generate_messages_eus.dir/progress.make
 
 test_package/CMakeFiles/test_package_generate_messages_eus: /home/ubuntu/ros_workspace_test/devel/share/roseus/ros/test_package/msg/Hz.l
+test_package/CMakeFiles/test_package_generate_messages_eus: /home/ubuntu/ros_workspace_test/devel/share/roseus/ros/test_package/msg/Motor_control.l
 test_package/CMakeFiles/test_package_generate_messages_eus: /home/ubuntu/ros_workspace_test/devel/share/roseus/ros/test_package/manifest.l
 
 
@@ -62,12 +63,18 @@ test_package/CMakeFiles/test_package_generate_messages_eus: /home/ubuntu/ros_wor
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/ros_workspace_test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from test_package/Hz.msg"
 	cd /home/ubuntu/ros_workspace_test/build/test_package && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/ubuntu/ros_workspace_test/src/test_package/msg/Hz.msg -Itest_package:/home/ubuntu/ros_workspace_test/src/test_package/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p test_package -o /home/ubuntu/ros_workspace_test/devel/share/roseus/ros/test_package/msg
 
+/home/ubuntu/ros_workspace_test/devel/share/roseus/ros/test_package/msg/Motor_control.l: /opt/ros/noetic/lib/geneus/gen_eus.py
+/home/ubuntu/ros_workspace_test/devel/share/roseus/ros/test_package/msg/Motor_control.l: /home/ubuntu/ros_workspace_test/src/test_package/msg/Motor_control.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/ros_workspace_test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from test_package/Motor_control.msg"
+	cd /home/ubuntu/ros_workspace_test/build/test_package && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/ubuntu/ros_workspace_test/src/test_package/msg/Motor_control.msg -Itest_package:/home/ubuntu/ros_workspace_test/src/test_package/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p test_package -o /home/ubuntu/ros_workspace_test/devel/share/roseus/ros/test_package/msg
+
 /home/ubuntu/ros_workspace_test/devel/share/roseus/ros/test_package/manifest.l: /opt/ros/noetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/ros_workspace_test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp manifest code for test_package"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/ros_workspace_test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp manifest code for test_package"
 	cd /home/ubuntu/ros_workspace_test/build/test_package && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/ubuntu/ros_workspace_test/devel/share/roseus/ros/test_package test_package std_msgs
 
 test_package_generate_messages_eus: test_package/CMakeFiles/test_package_generate_messages_eus
 test_package_generate_messages_eus: /home/ubuntu/ros_workspace_test/devel/share/roseus/ros/test_package/msg/Hz.l
+test_package_generate_messages_eus: /home/ubuntu/ros_workspace_test/devel/share/roseus/ros/test_package/msg/Motor_control.l
 test_package_generate_messages_eus: /home/ubuntu/ros_workspace_test/devel/share/roseus/ros/test_package/manifest.l
 test_package_generate_messages_eus: test_package/CMakeFiles/test_package_generate_messages_eus.dir/build.make
 

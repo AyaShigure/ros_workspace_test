@@ -10,6 +10,7 @@ import time
 def buzz_control():
     rospy.init_node('buzz_control')
     pub = rospy.Publisher('buzzing_hz',Hz,queue_size=1)
+    rate = rospy.Rate(1)
     while not rospy.is_shutdown():
         t = Hz()
 #        try:
@@ -17,12 +18,16 @@ def buzz_control():
 #            print('Command frquence = ',data,' Hz\n')
 #        except ValueError:
 #            print('Please input a int .\n')
-        print('Input a command frquence:')
-        t.Hz = int(input())
-        print('\n')
-        rospy.loginfo(t)
-        pub.publish(t)
-        rospy.spin()
+        t.Hz = int(input('Input a command frquence:'))
+        if t.Hz<0:
+            print('?????? Who told u that frquence could be minus???\n')
+            
+        else:
+            print('\n')
+            rospy.loginfo(t)
+            pub.publish(t)
+
+        rate.sleep()
 
 
 
