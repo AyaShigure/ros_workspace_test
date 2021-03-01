@@ -27,13 +27,15 @@ struct Motor_control_
     : left_speed(0)
     , left_duration(0.0)
     , right_speed(0)
-    , right_duration(0.0)  {
+    , right_duration(0.0)
+    , Hz(0)  {
     }
   Motor_control_(const ContainerAllocator& _alloc)
     : left_speed(0)
     , left_duration(0.0)
     , right_speed(0)
-    , right_duration(0.0)  {
+    , right_duration(0.0)
+    , Hz(0)  {
   (void)_alloc;
     }
 
@@ -50,6 +52,9 @@ struct Motor_control_
 
    typedef float _right_duration_type;
   _right_duration_type right_duration;
+
+   typedef int16_t _Hz_type;
+  _Hz_type Hz;
 
 
 
@@ -83,7 +88,8 @@ bool operator==(const ::test_package::Motor_control_<ContainerAllocator1> & lhs,
   return lhs.left_speed == rhs.left_speed &&
     lhs.left_duration == rhs.left_duration &&
     lhs.right_speed == rhs.right_speed &&
-    lhs.right_duration == rhs.right_duration;
+    lhs.right_duration == rhs.right_duration &&
+    lhs.Hz == rhs.Hz;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -140,12 +146,12 @@ struct MD5Sum< ::test_package::Motor_control_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "eb71cca081d8618640e259cd620adabe";
+    return "4e50ba1e73541c0fce782268f48a6992";
   }
 
   static const char* value(const ::test_package::Motor_control_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xeb71cca081d86186ULL;
-  static const uint64_t static_value2 = 0x40e259cd620adabeULL;
+  static const uint64_t static_value1 = 0x4e50ba1e73541c0fULL;
+  static const uint64_t static_value2 = 0xce782268f48a6992ULL;
 };
 
 template<class ContainerAllocator>
@@ -168,6 +174,7 @@ struct Definition< ::test_package::Motor_control_<ContainerAllocator> >
 "float32 left_duration\n"
 "int16 right_speed\n"
 "float32 right_duration\n"
+"int16 Hz\n"
 ;
   }
 
@@ -190,6 +197,7 @@ namespace serialization
       stream.next(m.left_duration);
       stream.next(m.right_speed);
       stream.next(m.right_duration);
+      stream.next(m.Hz);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -216,6 +224,8 @@ struct Printer< ::test_package::Motor_control_<ContainerAllocator> >
     Printer<int16_t>::stream(s, indent + "  ", v.right_speed);
     s << indent << "right_duration: ";
     Printer<float>::stream(s, indent + "  ", v.right_duration);
+    s << indent << "Hz: ";
+    Printer<int16_t>::stream(s, indent + "  ", v.Hz);
   }
 };
 

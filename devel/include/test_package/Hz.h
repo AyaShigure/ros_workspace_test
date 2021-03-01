@@ -24,10 +24,12 @@ struct Hz_
   typedef Hz_<ContainerAllocator> Type;
 
   Hz_()
-    : Hz(0)  {
+    : Hz(0)
+    , distance(0.0)  {
     }
   Hz_(const ContainerAllocator& _alloc)
-    : Hz(0)  {
+    : Hz(0)
+    , distance(0.0)  {
   (void)_alloc;
     }
 
@@ -35,6 +37,9 @@ struct Hz_
 
    typedef int16_t _Hz_type;
   _Hz_type Hz;
+
+   typedef float _distance_type;
+  _distance_type distance;
 
 
 
@@ -65,7 +70,8 @@ return s;
 template<typename ContainerAllocator1, typename ContainerAllocator2>
 bool operator==(const ::test_package::Hz_<ContainerAllocator1> & lhs, const ::test_package::Hz_<ContainerAllocator2> & rhs)
 {
-  return lhs.Hz == rhs.Hz;
+  return lhs.Hz == rhs.Hz &&
+    lhs.distance == rhs.distance;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -122,12 +128,12 @@ struct MD5Sum< ::test_package::Hz_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "b58bcf9bc7477a164c0a92a7080d13dc";
+    return "4cb9cdb75a7d736a7cc332f56659b712";
   }
 
   static const char* value(const ::test_package::Hz_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xb58bcf9bc7477a16ULL;
-  static const uint64_t static_value2 = 0x4c0a92a7080d13dcULL;
+  static const uint64_t static_value1 = 0x4cb9cdb75a7d736aULL;
+  static const uint64_t static_value2 = 0x7cc332f56659b712ULL;
 };
 
 template<class ContainerAllocator>
@@ -147,6 +153,7 @@ struct Definition< ::test_package::Hz_<ContainerAllocator> >
   static const char* value()
   {
     return "int16 Hz\n"
+"float32 distance\n"
 ;
   }
 
@@ -166,6 +173,7 @@ namespace serialization
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
       stream.next(m.Hz);
+      stream.next(m.distance);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -186,6 +194,8 @@ struct Printer< ::test_package::Hz_<ContainerAllocator> >
   {
     s << indent << "Hz: ";
     Printer<int16_t>::stream(s, indent + "  ", v.Hz);
+    s << indent << "distance: ";
+    Printer<float>::stream(s, indent + "  ", v.distance);
   }
 };
 

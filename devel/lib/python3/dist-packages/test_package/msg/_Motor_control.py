@@ -8,15 +8,16 @@ import struct
 
 
 class Motor_control(genpy.Message):
-  _md5sum = "eb71cca081d8618640e259cd620adabe"
+  _md5sum = "4e50ba1e73541c0fce782268f48a6992"
   _type = "test_package/Motor_control"
   _has_header = False  # flag to mark the presence of a Header object
   _full_text = """int16 left_speed
 float32 left_duration
 int16 right_speed
-float32 right_duration"""
-  __slots__ = ['left_speed','left_duration','right_speed','right_duration']
-  _slot_types = ['int16','float32','int16','float32']
+float32 right_duration
+int16 Hz"""
+  __slots__ = ['left_speed','left_duration','right_speed','right_duration','Hz']
+  _slot_types = ['int16','float32','int16','float32','int16']
 
   def __init__(self, *args, **kwds):
     """
@@ -26,7 +27,7 @@ float32 right_duration"""
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       left_speed,left_duration,right_speed,right_duration
+       left_speed,left_duration,right_speed,right_duration,Hz
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -43,11 +44,14 @@ float32 right_duration"""
         self.right_speed = 0
       if self.right_duration is None:
         self.right_duration = 0.
+      if self.Hz is None:
+        self.Hz = 0
     else:
       self.left_speed = 0
       self.left_duration = 0.
       self.right_speed = 0
       self.right_duration = 0.
+      self.Hz = 0
 
   def _get_types(self):
     """
@@ -62,7 +66,7 @@ float32 right_duration"""
     """
     try:
       _x = self
-      buff.write(_get_struct_hfhf().pack(_x.left_speed, _x.left_duration, _x.right_speed, _x.right_duration))
+      buff.write(_get_struct_hfhfh().pack(_x.left_speed, _x.left_duration, _x.right_speed, _x.right_duration, _x.Hz))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -76,8 +80,8 @@ float32 right_duration"""
       end = 0
       _x = self
       start = end
-      end += 12
-      (_x.left_speed, _x.left_duration, _x.right_speed, _x.right_duration,) = _get_struct_hfhf().unpack(str[start:end])
+      end += 14
+      (_x.left_speed, _x.left_duration, _x.right_speed, _x.right_duration, _x.Hz,) = _get_struct_hfhfh().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -91,7 +95,7 @@ float32 right_duration"""
     """
     try:
       _x = self
-      buff.write(_get_struct_hfhf().pack(_x.left_speed, _x.left_duration, _x.right_speed, _x.right_duration))
+      buff.write(_get_struct_hfhfh().pack(_x.left_speed, _x.left_duration, _x.right_speed, _x.right_duration, _x.Hz))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -106,8 +110,8 @@ float32 right_duration"""
       end = 0
       _x = self
       start = end
-      end += 12
-      (_x.left_speed, _x.left_duration, _x.right_speed, _x.right_duration,) = _get_struct_hfhf().unpack(str[start:end])
+      end += 14
+      (_x.left_speed, _x.left_duration, _x.right_speed, _x.right_duration, _x.Hz,) = _get_struct_hfhfh().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -116,9 +120,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_hfhf = None
-def _get_struct_hfhf():
-    global _struct_hfhf
-    if _struct_hfhf is None:
-        _struct_hfhf = struct.Struct("<hfhf")
-    return _struct_hfhf
+_struct_hfhfh = None
+def _get_struct_hfhfh():
+    global _struct_hfhfh
+    if _struct_hfhfh is None:
+        _struct_hfhfh = struct.Struct("<hfhfh")
+    return _struct_hfhfh

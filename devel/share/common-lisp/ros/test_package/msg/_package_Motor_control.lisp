@@ -7,4 +7,6 @@
           RIGHT_SPEED
           RIGHT_DURATION-VAL
           RIGHT_DURATION
+          HZ-VAL
+          HZ
 ))

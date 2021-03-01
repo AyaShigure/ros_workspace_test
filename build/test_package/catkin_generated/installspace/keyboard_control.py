@@ -10,8 +10,11 @@ import time
 import rospy
 from test_package.msg import Motor_control
 import termios, sys , tty
-import keyboard
+# import keyboard
 from termcolor import colored
+
+
+
 
 #defining raw input function
 def _getch():
@@ -23,6 +26,9 @@ def _getch():
    finally:
       termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
    return ch
+
+
+
 
    # wasd for control turnning 
    # getch()== x then input speed 
@@ -36,29 +42,33 @@ def publishing(left,right):
     motor.right_speed = right
     motor.left_duration = 0.5
     motor.right_duration = 0.5
-
+    print('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n')
     rospy.loginfo(motor)
+    print('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n')    
     pub.publish(motor)
 
 #press one key one time to send msg to Motor_control topic
 def control():
-    rate = rospy.Rate(0.25)
+    rate = rospy.Rate(2.1)
     print(colored('Use WASD to control the movement\n','blue'))
     print(colored('ATTENTION! Press one key a time!!!\n','red'))
-    print('\n   W   \nA  S  D')
+
     while not rospy.is_shutdown():
-        get = _getch()
+        print('\nq  W   \nA  S  D')
+        get = _getch()# heres a problem #############################################################
         if get == 'w':
             publishing(100,100)
         elif get == 's':
             publishing(-100,-100)
         elif get == 'a':
-            publishing(0,100)
+            publishing(100,-100)
         elif get == 'd':
-            publishing(100,0)
+            publishing(-100,100)
+        elif get == 'q':
+            break
         else:
             print(colored('\n\nPLEASE INPUT WASD!\n\n','red'))
-
+            print('\nq   W   \nA  S  D')
         rate.sleep()
 
 
@@ -68,5 +78,6 @@ if __name__ == '__main__':
         rospy.init_node('keyboard_control')
         pub = rospy.Publisher('keyboard_input',Motor_control,queue_size=1)
         control()
+        pass
     except rospy.ROSInterruptException:
         pass

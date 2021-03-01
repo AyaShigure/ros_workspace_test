@@ -111,3 +111,11 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/test_package" TYPE PROGRAM FILES "/home/ubuntu/ros_workspace_test/build/test_package/catkin_generated/installspace/motor_right.py")
 endif()
 
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/test_package" TYPE PROGRAM FILES "/home/ubuntu/ros_workspace_test/build/test_package/catkin_generated/installspace/SR04.py")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/test_package" TYPE PROGRAM FILES "/home/ubuntu/ros_workspace_test/build/test_package/catkin_generated/installspace/status_disp.py")
+endif()
+

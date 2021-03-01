@@ -7,6 +7,7 @@ from test_package.msg import Motor_control
 white= 26
 gray = 19
 
+GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(white,GPIO.OUT)   # (init = 0)
 GPIO.setup(gray,GPIO.OUT)   # (init = 0)

@@ -167,6 +167,8 @@ catkin_install_python(PROGRAMS
   scripts/keyboard_control.py
   scripts/motor_left.py
   scripts/motor_right.py
+  scripts/SR04.py
+  scripts/status_disp.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
  )
 

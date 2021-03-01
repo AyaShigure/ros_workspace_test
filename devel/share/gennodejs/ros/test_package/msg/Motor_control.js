@@ -22,6 +22,7 @@ class Motor_control {
       this.left_duration = null;
       this.right_speed = null;
       this.right_duration = null;
+      this.Hz = null;
     }
     else {
       if (initObj.hasOwnProperty('left_speed')) {
@@ -48,6 +49,12 @@ class Motor_control {
       else {
         this.right_duration = 0.0;
       }
+      if (initObj.hasOwnProperty('Hz')) {
+        this.Hz = initObj.Hz
+      }
+      else {
+        this.Hz = 0;
+      }
     }
   }
 
@@ -61,6 +68,8 @@ class Motor_control {
     bufferOffset = _serializer.int16(obj.right_speed, buffer, bufferOffset);
     // Serialize message field [right_duration]
     bufferOffset = _serializer.float32(obj.right_duration, buffer, bufferOffset);
+    // Serialize message field [Hz]
+    bufferOffset = _serializer.int16(obj.Hz, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -76,11 +85,13 @@ class Motor_control {
     data.right_speed = _deserializer.int16(buffer, bufferOffset);
     // Deserialize message field [right_duration]
     data.right_duration = _deserializer.float32(buffer, bufferOffset);
+    // Deserialize message field [Hz]
+    data.Hz = _deserializer.int16(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 12;
+    return 14;
   }
 
   static datatype() {
@@ -90,7 +101,7 @@ class Motor_control {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'eb71cca081d8618640e259cd620adabe';
+    return '4e50ba1e73541c0fce782268f48a6992';
   }
 
   static messageDefinition() {
@@ -100,6 +111,7 @@ class Motor_control {
     float32 left_duration
     int16 right_speed
     float32 right_duration
+    int16 Hz
     `;
   }
 
@@ -135,6 +147,13 @@ class Motor_control {
     }
     else {
       resolved.right_duration = 0.0
+    }
+
+    if (msg.Hz !== undefined) {
+      resolved.Hz = msg.Hz;
+    }
+    else {
+      resolved.Hz = 0
     }
 
     return resolved;

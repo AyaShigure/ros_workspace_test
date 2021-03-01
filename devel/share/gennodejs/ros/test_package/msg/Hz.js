@@ -19,6 +19,7 @@ class Hz {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.Hz = null;
+      this.distance = null;
     }
     else {
       if (initObj.hasOwnProperty('Hz')) {
@@ -27,6 +28,12 @@ class Hz {
       else {
         this.Hz = 0;
       }
+      if (initObj.hasOwnProperty('distance')) {
+        this.distance = initObj.distance
+      }
+      else {
+        this.distance = 0.0;
+      }
     }
   }
 
@@ -34,6 +41,8 @@ class Hz {
     // Serializes a message object of type Hz
     // Serialize message field [Hz]
     bufferOffset = _serializer.int16(obj.Hz, buffer, bufferOffset);
+    // Serialize message field [distance]
+    bufferOffset = _serializer.float32(obj.distance, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -43,11 +52,13 @@ class Hz {
     let data = new Hz(null);
     // Deserialize message field [Hz]
     data.Hz = _deserializer.int16(buffer, bufferOffset);
+    // Deserialize message field [distance]
+    data.distance = _deserializer.float32(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 2;
+    return 6;
   }
 
   static datatype() {
@@ -57,13 +68,14 @@ class Hz {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'b58bcf9bc7477a164c0a92a7080d13dc';
+    return '4cb9cdb75a7d736a7cc332f56659b712';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
     int16 Hz
+    float32 distance
     `;
   }
 
@@ -78,6 +90,13 @@ class Hz {
     }
     else {
       resolved.Hz = 0
+    }
+
+    if (msg.distance !== undefined) {
+      resolved.distance = msg.distance;
+    }
+    else {
+      resolved.distance = 0.0
     }
 
     return resolved;

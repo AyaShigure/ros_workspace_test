@@ -8,12 +8,13 @@ import struct
 
 
 class Hz(genpy.Message):
-  _md5sum = "b58bcf9bc7477a164c0a92a7080d13dc"
+  _md5sum = "4cb9cdb75a7d736a7cc332f56659b712"
   _type = "test_package/Hz"
   _has_header = False  # flag to mark the presence of a Header object
-  _full_text = """int16 Hz"""
-  __slots__ = ['Hz']
-  _slot_types = ['int16']
+  _full_text = """int16 Hz
+float32 distance"""
+  __slots__ = ['Hz','distance']
+  _slot_types = ['int16','float32']
 
   def __init__(self, *args, **kwds):
     """
@@ -23,7 +24,7 @@ class Hz(genpy.Message):
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       Hz
+       Hz,distance
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -34,8 +35,11 @@ class Hz(genpy.Message):
       # message fields cannot be None, assign default values for those that are
       if self.Hz is None:
         self.Hz = 0
+      if self.distance is None:
+        self.distance = 0.
     else:
       self.Hz = 0
+      self.distance = 0.
 
   def _get_types(self):
     """
@@ -49,8 +53,8 @@ class Hz(genpy.Message):
     :param buff: buffer, ``StringIO``
     """
     try:
-      _x = self.Hz
-      buff.write(_get_struct_h().pack(_x))
+      _x = self
+      buff.write(_get_struct_hf().pack(_x.Hz, _x.distance))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -62,9 +66,10 @@ class Hz(genpy.Message):
     codecs.lookup_error("rosmsg").msg_type = self._type
     try:
       end = 0
+      _x = self
       start = end
-      end += 2
-      (self.Hz,) = _get_struct_h().unpack(str[start:end])
+      end += 6
+      (_x.Hz, _x.distance,) = _get_struct_hf().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -77,8 +82,8 @@ class Hz(genpy.Message):
     :param numpy: numpy python module
     """
     try:
-      _x = self.Hz
-      buff.write(_get_struct_h().pack(_x))
+      _x = self
+      buff.write(_get_struct_hf().pack(_x.Hz, _x.distance))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -91,9 +96,10 @@ class Hz(genpy.Message):
     codecs.lookup_error("rosmsg").msg_type = self._type
     try:
       end = 0
+      _x = self
       start = end
-      end += 2
-      (self.Hz,) = _get_struct_h().unpack(str[start:end])
+      end += 6
+      (_x.Hz, _x.distance,) = _get_struct_hf().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -102,9 +108,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_h = None
-def _get_struct_h():
-    global _struct_h
-    if _struct_h is None:
-        _struct_h = struct.Struct("<h")
-    return _struct_h
+_struct_hf = None
+def _get_struct_hf():
+    global _struct_hf
+    if _struct_hf is None:
+        _struct_hf = struct.Struct("<hf")
+    return _struct_hf
